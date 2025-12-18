@@ -1,0 +1,10 @@
+{
+  "name": "这是名称",
+  "description": "这是展示在扩展程序商店中的描述。",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "hello_extensions.png"
+  }
+}
