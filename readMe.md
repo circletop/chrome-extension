@@ -32,3 +32,28 @@
    用户点击扩展程序操作后，扩展程序会检查网址是否与文档页面匹配。接下来，它会检查当前标签页的状态并设置下一个状态。
 
 ## 使用service worker 处理事件(quick-api-reference)
+
+这个例子展示了如何使用Service Worker处理各种事件和API。
+
+主要功能包括：
+
+1. **Omnibox API**: 在地址栏中输入"api"关键字后可以快速搜索Chrome扩展API
+   - 安装扩展后，默认会提供一些API建议如tabs、storage、scripting
+   - 可以输入任意Chrome API名称直接跳转到相关文档页面
+   - 历史搜索记录会被保存以便快速访问
+
+2. **定时提示功能**:
+   - 使用Alarms API定期从服务器获取Chrome扩展开发技巧
+   - 每分钟更新一次提示内容
+   - 在Chrome开发者文档网站上显示一个小部件，用户可以点击查看开发技巧
+
+3. **Content Script**:
+   - 在Chrome开发者文档网站(https://developer.chrome.google.cn/*)上注入脚本
+   - 添加一个"Tip"按钮到页面导航栏
+   - 点击按钮可查看从服务端获取的开发技巧
+
+4. **权限说明**:
+   - `storage`: 用于存储API搜索历史和提示内容
+   - `alarms`: 用于定时更新提示内容
+
+这个示例演示了现代Chrome扩展的核心概念：后台处理(Service Worker)、内容脚本注入、浏览器UI集成(Omnibox)以及多种Chrome APIs的组合使用。
